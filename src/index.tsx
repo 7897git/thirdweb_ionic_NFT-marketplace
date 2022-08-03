@@ -1,12 +1,17 @@
+import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
+
+const activeChainId = ChainId.Mumbai;
 ReactDOM.render(
   <React.StrictMode>
+<ThirdwebProvider desiredChainId={activeChainId}>
     <App />
+</ThirdwebProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
